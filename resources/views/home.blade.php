@@ -24,7 +24,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                         </svg>
-                        О проекте
+                        Правила
                     </button>
                 </a>
                 <a href="https://discord.com/invite/UMVAKMNrwd">
@@ -42,8 +42,10 @@
                 <a href="{{route('market.index')}}">
                     <button type="button"
                             class="text-gray-100 bg-gray-400 hover:bg-gray-400/90 dark:text-white gap-2 dark:bg-gray-500 dark:hover:bg-gray-500/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
-                        <svg class="w-5 h-5 text-gray-100 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                        <svg class="w-5 h-5 text-gray-100 dark:text-white" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
                         </svg>
                         Магазин
                     </button>
@@ -64,7 +66,7 @@
         <div
             class="mt-2 min-h-screen rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700 dark:bg-gray-800">
             <div class="mb-4 grid grid-cols-2 gap-4">
-                <div class="flex h-28 flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
+                <div class="flex h-40 flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
                     <svg class="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -87,13 +89,12 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="flex h-28 flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
+                <div class="flex h-40 flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
                     <svg class="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
                               d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M3 18v-7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
                     </svg>
-
                     <p
                         class="tracking-wide text-[0.5rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
                         Самые богатые игроки
@@ -108,63 +109,17 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-4 flex gap-2 h-48 flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
+            <div
+                class="mb-4 flex gap-2 h-48 flex-col items-center justify-start pt-3 rounded bg-gray-50 dark:bg-gray-700">
                 <p class="text-2xl text-gray-800 text-center dark:text-gray-300">
-                    Последний зарегистрированный пользователь
+                    Лучшие семьи сервера
                 </p>
-                @foreach ($lastUser as $user)
+                @foreach ($bestFamilies as $family)
                     <a href="#"
                        class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-green-400 dark:text-green-400">
-                        {{ $user->nickname }}
+                        {{ $family->ClanName }}
                     </a>
                 @endforeach
-            </div>
-            <div class="mb-4 flex h-48 items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
-                <p class="text-2xl text-gray-800 dark:text-gray-300">
-                    <svg class="h-3.5 w-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                         viewBox="0 0 18 18">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M9 1v16M1 9h16"/>
-                    </svg>
-                </p>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
-                    <p class="text-2xl text-gray-800 dark:text-gray-300">
-                        <svg class="h-3.5 w-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                             viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 1v16M1 9h16"/>
-                        </svg>
-                    </p>
-                </div>
-                <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
-                    <p class="text-2xl text-gray-800 dark:text-gray-300">
-                        <svg class="h-3.5 w-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                             viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 1v16M1 9h16"/>
-                        </svg>
-                    </p>
-                </div>
-                <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
-                    <p class="text-2xl text-gray-800 dark:text-gray-300">
-                        <svg class="h-3.5 w-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                             viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 1v16M1 9h16"/>
-                        </svg>
-                    </p>
-                </div>
-                <div class="flex h-28 items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
-                    <p class="text-2xl text-gray-800 dark:text-gray-300">
-                        <svg class="h-3.5 w-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                             viewBox="0 0 18 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 1v16M1 9h16"/>
-                        </svg>
-                    </p>
-                </div>
             </div>
         </div>
     </div>

@@ -6,7 +6,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarketController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -37,4 +36,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/market', [MarketController::class, 'index'])
         ->name('market.index');
+    Route::post('/market', [MarketController::class, 'store'])
+        ->name('market.store');
 });

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FamilyStatistic;
 use App\Models\GameStatistic;
-use App\Models\User;
 use App\Models\UsersStatistic;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
@@ -18,7 +18,9 @@ class HomeController extends Controller
         $richestPlayers = Cache::remember('richestPlayers', Config::get('settings.statistic_parsing_time'), function () {
             return UsersStatistic::query()->orderByDesc('money')->limit(3)->get();
         });
-        $lastUser = User::query()->orderByDesc('created_at')->limit(1)->get();
-        return view('home', compact('bestChief', 'richestPlayers', 'lastUser'));
+        $bestFamilies = Cache::remember('bestFamilies', Config::get('settings.statistic_parsing_time'), function () {
+            return FamilyStatistic::query()->orderByDesc('Exp')->limit(3)->get();
+        });
+        return view('home', compact('bestChief', 'richestPlayers', 'bestFamilies'));
     }
 }
