@@ -8,7 +8,7 @@
         <div class="px-4 mx-auto max-w-screen-xl items-center justify-center flex flex-col text-center py-24 lg:py-36">
             <img src="{{ asset('sticker/1.webp') }}" alt="" class="w-32 opacity-[80%]">
             <h1
-                class="mb-4 text-2xl md:text-text-4xl font-extrabold tracking-tight leading-none text-gray-800 dark:text-gray-300 md:text-5xl lg:text-6xl">
+                    class="mb-4 text-2xl md:text-text-4xl font-extrabold tracking-tight leading-none text-gray-800 dark:text-gray-300 md:text-5xl lg:text-6xl">
                 Познакомимся?</h1>
             <p class="mb-8 text-sm md:text-md font-normal text-gray-800 dark:text-gray-300 lg:text-xl sm:px-16 lg:px-48">
                 Мы - молодой, развивающийся проект игровых серверов Counter Strike 1.6<br>
@@ -34,7 +34,7 @@
                              xmlns="http://www.w3.org/2000/svg"
                              width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path
-                                d="M18.942 5.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.586 11.586 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3 17.392 17.392 0 0 0-2.868 11.662 15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.638 10.638 0 0 1-1.706-.83c.143-.106.283-.217.418-.331a11.664 11.664 0 0 0 10.118 0c.137.114.277.225.418.331-.544.328-1.116.606-1.71.832a12.58 12.58 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM8.678 14.813a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.929 1.929 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
+                                    d="M18.942 5.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.586 11.586 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3 17.392 17.392 0 0 0-2.868 11.662 15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.638 10.638 0 0 1-1.706-.83c.143-.106.283-.217.418-.331a11.664 11.664 0 0 0 10.118 0c.137.114.277.225.418.331-.544.328-1.116.606-1.71.832a12.58 12.58 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM8.678 14.813a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.929 1.929 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
                         </svg>
                         Discord
                     </button>
@@ -55,7 +55,7 @@
     </section>
     <div class="p-4 dark:bg-gray-800">
         <div
-            class="flex flex-col items-center justify-center tracking-wide text-[0.5rem] sm:text-[0.6rem] md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
+                class="flex flex-col items-center justify-center tracking-wide text-[0.5rem] sm:text-[0.6rem] md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
             <h1>
                 Статистика игроков
             </h1>
@@ -64,7 +64,7 @@
             </h6>
         </div>
         <div
-            class="mt-2 min-h-screen rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700 dark:bg-gray-800">
+                class="mt-2 min-h-screen rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700 dark:bg-gray-800">
             <div class="mb-4 grid grid-cols-2 gap-4">
                 <div class="flex h-40 flex-col items-center justify-center rounded bg-gray-50 dark:bg-gray-700">
                     <svg class="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true"
@@ -73,17 +73,17 @@
                               d="M7 11c.889-.086 1.416-.543 2.156-1.057a22.323 22.323 0 0 0 3.958-5.084 1.6 1.6 0 0 1 .582-.628 1.549 1.549 0 0 1 1.466-.087c.205.095.388.233.537.406a1.64 1.64 0 0 1 .384 1.279l-1.388 4.114M7 11H4v6.5A1.5 1.5 0 0 0 5.5 19v0A1.5 1.5 0 0 0 7 17.5V11Zm6.5-1h4.915c.286 0 .372.014.626.15.254.135.472.332.637.572a1.874 1.874 0 0 1 .215 1.673l-2.098 6.4C17.538 19.52 17.368 20 16.12 20c-2.303 0-4.79-.943-6.67-1.475"/>
                     </svg>
                     <p
-                        class="tracking-wide text-[0.5rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
+                            class="tracking-wide text-[0.5rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
                         Начальник месяца
                     </p>
                     @foreach ($bestChief as $chief)
                         <div>
                             <span
-                                class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 linear-wipe">
+                                    class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 linear-wipe">
                                 {{ $chief->nickname }}
                             </span>
                             <span
-                                class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
+                                    class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
                                 ({{ $chief->was_chief }})
                             </span>
                         </div>
@@ -96,13 +96,13 @@
                               d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M3 18v-7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
                     </svg>
                     <p
-                        class="tracking-wide text-[0.5rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
+                            class="tracking-wide text-[0.5rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300">
                         Самые богатые игроки
                     </p>
                     <div class="flex flex-wrap items-center justify-center gap-2 gap-x-4">
                         @foreach ($richestPlayers as $player)
                             <span
-                                class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300 linear-wipe">
+                                    class="font-bold tracking-wide text-[0.4rem] sm:text-[0.6rem] text-center md:text-sm xl:text-2xl text-gray-800 dark:text-gray-300 linear-wipe">
                                 ・{{ $player->nickname }}
                             </span>
                         @endforeach
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div
-                class="mb-4 flex gap-2 h-48 flex-col items-center justify-start pt-3 rounded bg-gray-50 dark:bg-gray-700">
+                    class="mb-4 flex gap-2 h-48 flex-col items-center justify-start pt-3 rounded bg-gray-50 dark:bg-gray-700">
                 <p class="text-2xl text-gray-800 text-center dark:text-gray-300">
                     Лучшие семьи сервера
                 </p>
