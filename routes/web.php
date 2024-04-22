@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarketController;
+use App\Http\Controllers\PlayerStatController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -38,4 +39,8 @@ Route::middleware('auth')->group(function () {
         ->name('market.index');
     Route::post('/market', [MarketController::class, 'store'])
         ->name('market.store');
+    Route::get('/players', [PlayerStatController::class, 'index'])
+        ->name('players.index');
+    Route::view('/rules', 'pages.rules')
+        ->name('rules');
 });

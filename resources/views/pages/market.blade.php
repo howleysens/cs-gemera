@@ -91,7 +91,7 @@
                                     </svg>
                                     Купить
                                 </button>
-                                    <span class="price font-bold text-pink-600 sm:text-xl dark:text-pink-500 tracking-widest">65₽</span>
+                                    <span class="price font-bold text-gray-600 sm:text-[2rem] dark:text-gray-100 tracking-widest">65₽</span>
                                 </div>
                             </form>
                         </div>

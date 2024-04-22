@@ -71,7 +71,7 @@ underlineSelect.addEventListener('change', () => {
           <span class="text-center sm:text-right mb-2 font-light text-gray-500 sm:text-xl dark:text-gray-100">
               * Доступ к меню администратора<br>
               * Префикс <span class="text-yellow-200">[</span><span class="text-green-400">Админ</span><span class="text-yellow-200">]</span><br>
-              * Доступ к предыдущим привилегиям
+              * Доступ к предыдущим привилегиям<br>
               * Уникальные шапки
           </span>
           <img src="assets/market/adminMenu.png" alt="" class="w-96 rounded border-[1px] border-gray-500">

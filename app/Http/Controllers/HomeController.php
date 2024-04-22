@@ -7,11 +7,23 @@ use App\Models\GameStatistic;
 use App\Models\UsersStatistic;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
+use xPaw\SourceQuery\SourceQuery;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
+        $getServerStats = Cache::remember('server_info', Config::get('settings.statistic_parsing_time'), function () {
+            $query = new SourceQuery();
+            try {
+                $conn = $query->Connect(env('GAMESERVER_HOST'), env('GAMESERVER_PORT'), 5, SourceQuery::SOURCE);
+                return $query->GetInfo();
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            } finally {
+                $query->Disconnect();
+            }
+        });
         $bestChief = Cache::remember('best_chief', Config::get('settings.statistic_parsing_time'), function () {
             return GameStatistic::orderByDesc('was_chief')
                 ->limit(1)
@@ -29,6 +41,6 @@ class HomeController extends Controller
                 ->get()
                 ->unique('ClanName');
         });
-        return view('home', compact('bestChief', 'richestPlayers', 'bestFamilies'));
+        return view('home', compact('bestChief', 'richestPlayers', 'bestFamilies', 'getServerStats'));
     }
 }
