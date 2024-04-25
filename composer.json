@@ -9,7 +9,8 @@
         "laravel-lang/locales": "^2.6",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "xpaw/php-source-query-class": "^3.0"
+        "xpaw/php-source-query-class": "^3.0",
+        "yoomoney/yookassa-sdk-php": "^3.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.12",

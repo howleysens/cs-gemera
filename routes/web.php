@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarketController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlayerStatController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,18 +30,23 @@ Route::middleware('guest')->group(function () {
         ->name('password.reset');
     Route::post('/reset-password', [ResetPasswordController::class, 'store'])
         ->name('password.update');
+    Route::view('/rules', 'pages.rules')
+        ->name('rules');
 });
 
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'destroy'])
         ->name('logout');
-
+    Route::get('/players', [PlayerStatController::class, 'index'])
+        ->name('players.index');
     Route::get('/market', [MarketController::class, 'index'])
         ->name('market.index');
     Route::post('/market', [MarketController::class, 'store'])
         ->name('market.store');
-    Route::get('/players', [PlayerStatController::class, 'index'])
-        ->name('players.index');
-    Route::view('/rules', 'pages.rules')
-        ->name('rules');
+    Route::match(['GET', 'POST'], '/payments/callback', [PaymentController::class, 'callback'])
+        ->name('payment.callback');
+    Route::post('/payments/create', [PaymentController::class, 'create'])
+        ->name('payment.create');
+    Route::get('/payment', [PaymentController::class, 'index'])
+        ->name('payment.index');
 });

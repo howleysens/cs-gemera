@@ -71,9 +71,16 @@
                                 <p class="text-sm text-gray-900 dark:text-white" role="none">
                                     {{ \App\Models\User::find(\Illuminate\Support\Facades\Auth::user()->id)->nickname}}
                                 </p>
-                                <p class="truncate text-sm font-medium text-gray-900 dark:text-gray-300" role="none">
+                                <p class="text-sm font-medium text-gray-900 dark:text-gray-300" role="none">
                                     {{\App\Models\User::find(\Illuminate\Support\Facades\Auth::user()->id)->email}}
                                 </p>
+                            </div>
+                            <div class="px-4 py-3" role="none">
+                                <a href="{{route('payment.index')}}">
+                                    <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                        Баланс: {{\App\Models\User::find(\Illuminate\Support\Facades\Auth::id(), 'balance')['balance']}} ₽
+                                    </p>
+                                </a>
                             </div>
                             <ul class="py-1" role="none">
                                 <li>

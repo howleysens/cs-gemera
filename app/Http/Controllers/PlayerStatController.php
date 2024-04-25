@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\UsersStatistic;
-use Illuminate\Http\Request;
 
 class PlayerStatController extends Controller
 {
