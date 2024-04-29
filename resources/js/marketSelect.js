@@ -1,10 +1,23 @@
 const underlineSelect = document.getElementById('underline_select');
 const rightDiv = document.querySelector('.right');
 const price = document.querySelector('.price');
+const linkType = document.getElementById('privilegy_link');
+const steamIdBlock = document.querySelector('#steamid_input');
+const nicknameInput = document.querySelector('#nicknameInput');
+const priceElement = document.getElementById('priceElement');
+const priceInput = document.getElementById('priceInput');
+
+function updatePriceValue() {
+    const priceText = priceElement.textContent;
+    const priceValue = parseInt(priceText.replace('₽', '')); // Удаление символа "₽"
+    priceInput.value = priceValue;
+}
 
 underlineSelect.addEventListener('change', () => {
     const selectedOptionValue = underlineSelect.value;
     const rightContent = rightDiv.innerHTML;
+    priceElement.addEventListener('DOMSubtreeModified', updatePriceValue);
+
 
     if (selectedOptionValue === 'GRAB') {
         price.textContent = "100₽";
@@ -98,3 +111,23 @@ underlineSelect.addEventListener('change', () => {
         rightDiv.innerHTML = rightContent;
     }
 });
+linkType.addEventListener('change', () => {
+    if (linkType.value === 'link_steamid') {
+        nicknameInput.classList.add('hidden');
+        steamIdBlock.innerHTML = `
+            <label for="text" class="font-bold text-gray-600 sm:text-xl dark:text-gray-100">SteamID</label>
+        <a href="https://steamid.io/"
+           class="font-thin text-red-500 dark:text-red-300 text-[0.7rem] dark:text-gray-100">*Как
+            узнать SteamID?*</a>
+        <input type="text" name="steamid"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+               placeholder="SteamID"/>
+               `;
+        steamIdBlock.classList.remove('hidden');
+        steamIdBlock.classList.add('mt-4');
+    } else {
+        nicknameInput.classList.remove('hidden');
+        steamIdBlock.classList.remove('mt-4');
+        steamIdBlock.innerHTML = '';
+    }
+})

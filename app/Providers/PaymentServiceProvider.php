@@ -53,7 +53,7 @@ class PaymentServiceProvider extends ServiceProvider
             'capture' => true,
             'confirmation' => [
                 'type' => 'redirect',
-                'return_url' => route('payment.index'),
+                'return_url' => route('thank-you'),
             ],
             'metadata' => [
                 'transaction_id' => $options['transaction_id'],

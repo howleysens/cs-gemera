@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -21,7 +23,7 @@ class User extends Authenticatable
         'nickname',
         'email',
         'password',
-        'balance'
+        'balance',
     ];
 
     /**
@@ -50,5 +52,10 @@ class User extends Authenticatable
     public function getBalance()
     {
         return $this->balance;
+    }
+
+    public function setBalance($amount)
+    {
+        return $this->balance = $amount;
     }
 }

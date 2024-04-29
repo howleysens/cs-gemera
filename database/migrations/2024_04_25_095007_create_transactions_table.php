@@ -15,6 +15,8 @@ return new class () extends Migration {
             $table->decimal('amount', 10, 2)->default(0);
             $table->string('description')->nullable();
             $table->enum('status', ['CREATED', 'FAILED', 'CONFIRMED'])->default('CREATED');
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

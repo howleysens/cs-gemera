@@ -41,37 +41,31 @@
                                     <option value="PREM" class="bg-gray-200 dark:bg-gray-200 dark:text-gray-900">
                                         Премиум (месяц)
                                     </option>
-                                    <option value="ADM" class="bg-gray-200 dark:bg-gray-200 dark:text-gray-900">Админ (месяц)
+                                    <option value="ADM" class="bg-gray-200 dark:bg-gray-200 dark:text-gray-900">Админ
+                                        (месяц)
                                     </option>
                                     <option value="HLPR" class="bg-gray-200 dark:bg-gray-200 dark:text-gray-900">
                                         Хелпер (месяц)
                                     </option>
                                 </select>
-                                <div class="mt-4">
+                                <div class="mt-4" id="nicknameInput">
                                     <label for="text" class="font-bold text-gray-600 sm:text-xl dark:text-gray-100">Никнейм</label>
                                     <input type="text" name="nickname"
-                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                           placeholder="Никнейм" required/>
+                                           class="{{$errors->has('password') ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'}} bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                           placeholder="Никнейм"/>
                                 </div>
-                                <div class="mt-4 flex flex-col">
-                                    <label for="text" class="font-bold text-gray-600 sm:text-xl dark:text-gray-100">SteamID</label>
-                                    <a href="https://steamid.io/"
-                                       class="font-thin text-red-500 dark:text-red-300 text-[0.7rem] dark:text-gray-100">*Как
-                                        узнать SteamID?*</a>
-                                    <input type="text" name="steamid"
-                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                           placeholder="SteamID" required/>
+                                <div class="mt-4 flex flex-col hidden" id="steamid_input">
                                 </div>
                                 <div class="mt-4">
                                     <label for="text" class="font-bold text-gray-600 sm:text-xl dark:text-gray-100">Пароль</label>
                                     <input type="text" name="password"
-                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                           placeholder="Пароль" required/>
+                                           class="{{$errors->has('password') ? 'border-red-500 dark:border-red-500' : 'border-gray-300 dark:border-gray-600'}} bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                           placeholder="Пароль"/>
                                 </div>
                                 <div class="my-4">
                                 <span
                                     class="font-bold text-gray-600 sm:text-xl dark:text-gray-100">Тип привязки</span>
-                                    <select name="privilegy_link" id="underline_select"
+                                    <select name="privilegy_link" id="privilegy_link"
                                             class="block py-2.5 pl-2 px-0 w-full text-sm text-gray-900 dark:bg-gray-700 bg-transparent border-0 border-2 rounded border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                                         <option value="link_nickname" class="bg-gray-200 dark:text-gray-900">
                                             Никнейм + пароль
@@ -82,16 +76,20 @@
                                     </select>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                <button type="submit"
-                                        class="text-white bg-gray-600 dark:bg-gray-400 hover:bg-pink-500 transition-all hover:dark:bg-pink-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
-                                    <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                         fill="currentColor" viewBox="0 0 18 21">
-                                        <path
-                                            d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
-                                    </svg>
-                                    Купить
-                                </button>
-                                    <span class="price font-bold text-gray-600 sm:text-[2rem] dark:text-gray-100 tracking-widest">65₽</span>
+                                    <button type="submit"
+                                            class="text-white bg-gray-600 dark:bg-gray-400 hover:bg-pink-500 transition-all hover:dark:bg-pink-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">
+                                        <svg class="w-3.5 h-3.5 me-2" aria-hidden="true"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             fill="currentColor" viewBox="0 0 18 21">
+                                            <path
+                                                d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                                        </svg>
+                                        Купить
+                                    </button>
+                                    <span id="priceElement" class="price font-bold text-gray-600 sm:text-[2rem] dark:text-gray-100 tracking-widest">65₽</span>
+                                    <input type="hidden" name="price" id="priceInput" value="65">
+                                    <script>
+                                    </script>
                                 </div>
                             </form>
                         </div>

@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Providers\PaymentServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use YooKassa\Model\Notification\NotificationEventType;
 use YooKassa\Model\Notification\NotificationSucceeded;
 use YooKassa\Model\Notification\NotificationWaitingForCapture;
@@ -26,6 +27,7 @@ class PaymentController extends Controller
         $transaction = Transaction::create([
             'amount' => $amount,
             'description' => $description,
+            'user_id' => Auth::id(),
         ]);
         if ($transaction) {
             $link = $service->createPayment($amount, $description, [
@@ -58,17 +60,7 @@ class PaymentController extends Controller
                     $transaction = Transaction::find($transactionId);
                     $transaction->status = PaymentStatusEnum::CONFIRMED;
                     $transaction->save();
-                    $user = Auth::user();
-                    if ($user->getBalance() > 0) {
-                        User::query()->find(Auth::id())->update([
-                            'balance' => (float)$user->getBalance() + (float)$payment->amount->value
-                        ]);
-//                        (float)$user->balance + (float)$payment->amount->value;
-                    } else {
-                        User::query()->find(Auth::id())->update([
-                            'balance' => (float)$payment->amount->value
-                        ]);
-                    }
+                    User::query()->find($transaction->user_id)->increment('balance', $transaction->amount);
                 }
             }
         }
