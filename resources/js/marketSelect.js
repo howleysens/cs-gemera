@@ -99,7 +99,7 @@ underlineSelect.addEventListener('change', () => {
           </span>
           <span class="text-center sm:text-right mb-2 font-light text-gray-500 sm:text-xl dark:text-gray-100">
               * Доступ к меню хелпера<br>
-              * Префикс <span class="text-yellow-200">[</span><span class="text-green-400">Админ</span><span class="text-yellow-200">]</span><br>
+              * Префикс <span class="text-yellow-200">[</span><span class="text-green-400">Хелпер</span><span class="text-yellow-200">]</span><br>
               * Доступ к предыдущим привилегиям<br>
               * Уникальный скин
           </span>

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'CS-GEMERA.RU | ЛУЧШИЕ ИГРОВЫЕ СЕРВЕРА CS 1.6')
+@section('title', 'CS52.RU | ЛУЧШИЕ ИГРОВЫЕ СЕРВЕРА CS 1.6')
 @section('content')
     @include('shared.header')
     <section class="flex min-h-screen justify-center bg-gray-50 dark:bg-gray-800 pb-20">
@@ -70,7 +70,7 @@
                                         <option value="link_nickname" class="bg-gray-200 dark:text-gray-900">
                                             Никнейм + пароль
                                         </option>
-                                        <option value="link_steamid"
+                                        <option value="link_steamid" disabled
                                                 class="bg-gray-200 dark:bg-gray-200 dark:text-gray-900">SteamID
                                         </option>
                                     </select>
@@ -86,12 +86,18 @@
                                         </svg>
                                         Купить
                                     </button>
-                                    <span id="priceElement" class="price font-bold text-gray-600 sm:text-[2rem] dark:text-gray-100 tracking-widest">65₽</span>
+                                    <span id="priceElement"
+                                          class="price font-bold text-gray-600 sm:text-[2rem] dark:text-gray-100 tracking-widest">65₽</span>
                                     <input type="hidden" name="price" id="priceInput" value="65">
                                     <script>
                                     </script>
                                 </div>
                             </form>
+                            @session('errorFlag')
+                            <div class="text-red-500">
+                                {{ session('errorFlag') }}
+                            </div>
+                            @endsession
                         </div>
                     </div>
                     <div class="right flex flex-col items-center sm:items-end w-full sm:w-1/2 h-full">

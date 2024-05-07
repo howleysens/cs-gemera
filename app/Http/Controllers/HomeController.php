@@ -31,7 +31,7 @@ class HomeController extends Controller
         });
         $richestPlayers = Cache::remember('richest_players', Config::get('settings.statistic_parsing_time'), function () {
             return UsersStatistic::orderByDesc('money')
-                ->whereNotIn('steamid', ['STEAM_0:0:209752981', 'STEAM_0:1:754134700', 'STEAM_0:0:17116760'])
+                ->whereNotIn('steamid', ['VALVE_1:0:140713958', 'STEAM_0:0:209752981', 'STEAM_0:1:754134700', 'STEAM_0:0:17116760'])
                 ->limit(3)
                 ->get();
         });

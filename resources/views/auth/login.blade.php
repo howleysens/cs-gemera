@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'CS-GEMERA.RU | Вход')
+@section('title', 'CS52.RU | Вход')
 @section('content')
     @include('shared.header')
     <section class="bg-gray-50 dark:bg-gray-900">
@@ -9,7 +9,7 @@
                     class="mb-6 flex items-center text-2xl font-semibold text-gray-900 dark:text-white"
             >
                 <img class="mr-2 h-8 w-8" src="{{ asset('assets/logo.png') }}" alt="logo"/>
-                CS-GEMERA
+                CS52
             </a>
             <div
                     class="w-full rounded-lg bg-white shadow dark:border dark:border-gray-700 dark:bg-gray-800 sm:max-w-md md:mt-0 xl:p-0">

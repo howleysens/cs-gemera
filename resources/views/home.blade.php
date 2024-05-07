@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'CS-GEMERA.RU | ЛУЧШИЕ ИГРОВЫЕ СЕРВЕРА CS 1.6')
+@section('title', 'CS52.RU | ЛУЧШИЕ ИГРОВЫЕ СЕРВЕРА CS 1.6')
 @section('content')
     @include('shared.header')
     <section class="bg-center bg-no-repeat dark:bg-gray-700 bg-gray-50 bg-blend-multiply">

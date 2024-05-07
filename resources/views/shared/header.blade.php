@@ -5,11 +5,11 @@
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start rtl:justify-end">
                 <a href="{{ route('home') }}" class="ms-2 flex md:me-24">
-                    <img src="{{ asset('assets/logo.png') }}" class="me-3 hidden h-8 sm:block" alt="LOGO-CS-GEMERA"/>
+                    <img src="{{ asset('assets/logo.png') }}" class="me-3 hidden h-8 sm:block" alt="LOGO-CS52"/>
                     <span
                         class="hidden self-center whitespace-nowrap text-sm font-semibold text-gray-600 dark:text-white sm:block sm:text-2xl"
                     >
-                        CS-GEMERA.RU
+                        CS52.RU
                     </span>
                 </a>
             </div>
